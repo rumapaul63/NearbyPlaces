@@ -28,25 +28,37 @@ import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.Marker
+import com.google.android.libraries.places.api.model.AutocompletePrediction
+import com.google.android.libraries.places.api.net.PlacesClient
+import com.mancj.materialsearchbar.MaterialSearchBar
 
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
-    private var latitude:Double=0.toDouble()
-    private var longitude:Double=0.toDouble()
+    private var latitude: Double = 0.toDouble()
+    private var longitude: Double = 0.toDouble()
     private lateinit var mLastLocation: Location
-    private var mMarker:Marker?=null
+    private var mMarker: Marker? = null
 
     //Location
     lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     lateinit var locationRequest: LocationRequest
-    lateinit var locationCallback:LocationCallback
+    lateinit var locationCallback: LocationCallback
 
 
+    //TODO suggestions and search bar is pending for now
+    //loading suggestions when user searches any place.
+    private lateinit var PlacesClient: PlacesClient
+    private lateinit var mylist: List<AutocompletePrediction>
 
-    companion object{
-        private const val MY_PERMISSION_CODE:Int=1000
+    private lateinit var MaterialSearchBar: MaterialSearchBar
+
+    private var DEFAULT_ZOOM = 18
+
+
+    companion object {
+        private const val MY_PERMISSION_CODE: Int = 1000
     }
 
 
@@ -65,8 +77,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         //Request runtime permission
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M) {
-            if(checkLocationPermission()) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkLocationPermission()) {
                 buildLocationRequest();
                 buildLocationCallBack();
                 fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
@@ -78,8 +90,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
             }
 
-        }
-        else{
+        } else {
             buildLocationRequest();
             buildLocationCallBack();
             fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
@@ -89,11 +100,32 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 Looper.myLooper()
             );
         }
+
+
+        //assigning functions to the bottom navigation buttons.
+
+        binding.bottomNavigation.setOnNavigationItemReselectedListener{
+            when(it.itemId){
+                R.id.action_market-> MynearbyPlaces("market")
+                R.id.action_airport-> MynearbyPlaces("airport")
+                R.id.action_restaurant-> MynearbyPlaces("restaurant")
+                R.id.action_hotel-> MynearbyPlaces("hotel")
+                R.id.action_hospital-> MynearbyPlaces("hospital")
+
+            }
+        }
+
+
     }
+
+     fun MynearbyPlaces(str: String){
+         //TODO from here we will implement our nearby locations.
+    }
+
 
     private fun buildLocationCallBack() {
         locationCallback=object:LocationCallback(){
-            override fun onLocationResult(p0: LocationResult?) {
+            override fun onLocationResult(p0: LocationResult) {
               mLastLocation=p0!!.locations.get(p0!!.locations.size-1) //Get Last Location
                 if(mMarker !=null){
                     mMarker!!.remove()
@@ -105,7 +137,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 val markerOptions=MarkerOptions()
                     .position(latLng)
                     .title("Your Position")
-                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
+                    //.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
 
                 mMarker=mMap!!.addMarker(markerOptions)
 

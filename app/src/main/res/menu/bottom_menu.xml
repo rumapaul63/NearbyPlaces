@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_market"
+
         android:enabled="true"
         android:title="Market"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
@@ -10,6 +11,7 @@
 
     <item
         android:id="@+id/action_airport"
+
         android:enabled="true"
         android:title="Airport"
         android:icon="@drawable/ic_baseline_local_airport_24"
@@ -17,6 +19,7 @@
 
     <item
         android:id="@+id/action_restaurant"
+
         android:enabled="true"
         android:title="Restaurant"
         android:icon="@drawable/ic_baseline_restaurant_24"
@@ -24,6 +27,7 @@
 
     <item
         android:id="@+id/action_hotel"
+
         android:enabled="true"
         android:title="Hotel"
         android:icon="@drawable/ic_baseline_hotel_24"
@@ -31,6 +35,7 @@
 
     <item
         android:id="@+id/action_hospital"
+
         android:enabled="true"
         android:title="Hospital"
         android:icon="@drawable/ic_baseline_local_hospital_24"
