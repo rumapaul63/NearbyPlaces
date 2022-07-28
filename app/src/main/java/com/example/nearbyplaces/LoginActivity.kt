@@ -20,6 +20,7 @@ class LoginActivity : AppCompatActivity() {
         binding.registerTxt.setOnClickListener{
             val intent= Intent(this,SignUpActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         binding.loginBtn.setOnClickListener {
