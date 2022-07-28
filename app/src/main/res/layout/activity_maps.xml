@@ -8,6 +8,7 @@
 
 
 
+
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -15,18 +16,21 @@
         android:layout_height="match_parent" />
 
     <com.mancj.materialsearchbar.MaterialSearchBar
+        android:id="@+id/searchBar"
         style="@style/MaterialSearchBarLight"
-        app:mt_speechMode="false"
-        app:mt_hint="search your destination"
-        app:mt_maxSuggestionsCount="10"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:id="@+id/searchBar"
-        android:layout_margin="12dp"
-        app:mt_placeholder="search your destination"
-        app:mt_navIconEnabled="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
         android:elevation="5dp"
-        android:outlineProvider="bounds"/>
+        android:outlineProvider="bounds"
+        app:mt_hint="search your destination"
+        app:mt_maxSuggestionsCount="10"
+        app:mt_navIconEnabled="true"
+        app:mt_placeholder="search your destination"
+        app:mt_speechMode="false" />
 
 
 

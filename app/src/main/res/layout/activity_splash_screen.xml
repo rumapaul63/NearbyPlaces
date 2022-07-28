@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context=".SplashScreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Welcome,"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quoteApp"
+            android:textColor="#91CB17"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="270dp"
+            android:layout_height="155dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="serif"
+            android:text="Let’s Get Started..."
+
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="283dp"
+                android:layout_height="118dp"
+                android:layout_marginTop="9dp"
+                android:src="@drawable/catss"
+                />
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="188dp"
+                android:layout_height="46dp"
+                android:background="@drawable/ripple_effect_bg"
+                android:text="Let's go"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_margin="15dp"
+                android:textStyle="bold"
+                />
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="328sp"
+                android:layout_height="239sp"
+                app:srcCompat="@drawable/bike" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

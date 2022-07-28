@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Url
 
 interface IGoogleAPIServices {
-    @GET
+   // @GET
     //TODO api calls pending
-    fun getMyNearbyPlaces(@Url url:String)call
+   // fun getMyNearbyPlaces(@Url url:String)call
 }

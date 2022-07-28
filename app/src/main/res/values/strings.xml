@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">NearbyPlaces</string>
+    <string name="app_name">pilgrimage</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDO-xvw6aO7VP508Nn_ANzUaedS84RWIu8</string>
     <string name="browser_key">AIzaSyBBa0XGRH6fSnN02FvxVl7cEzjSBim-ma4</string>
+    <string name="quoteApp">Planning a sacred journey? Don\'t worry we will help you with everything you need !</string>
 
-    </resources>
+</resources>

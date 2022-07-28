@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "227134471939",
+    "project_id": "projectpilgrimage-7e58e",
+    "storage_bucket": "projectpilgrimage-7e58e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227134471939:android:7035c4698a4abc8e593336",
+        "android_client_info": {
+          "package_name": "com.example.nearbyplaces"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227134471939-olaefpedk7ur4abtk98aihfjrtjvci3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgeHTu5wBOUkkMc8FZQIVJPzcL-x0EWD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227134471939-olaefpedk7ur4abtk98aihfjrtjvci3q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
