@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashMainScreen">
+    tools:context=".SplashMainScreen"
+    android:background="#F6F6F6">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -51,7 +52,7 @@
         android:fontFamily="sans-serif-condensed"
         android:text="WELCOME"
         android:textAlignment="center"
-        android:textColor="@color/teal_700"
+        android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

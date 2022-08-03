@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/quoteApp"
-            android:textColor="#91CB17"
+            android:textColor="#EA274E"
             android:textSize="22sp"
             android:textStyle="bold"/>
 
@@ -41,7 +41,7 @@
             android:fontFamily="serif"
             android:text="Let’s Get Started..."
 
-            android:textColor="@color/black"
+            android:textColor="#FBD402"
             android:textSize="40sp"
             android:textStyle="bold" />
 

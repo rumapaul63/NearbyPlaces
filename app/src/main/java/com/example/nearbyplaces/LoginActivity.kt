@@ -3,6 +3,7 @@ package com.example.nearbyplaces
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.nearbyplaces.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -10,6 +11,8 @@ import com.google.firebase.auth.FirebaseAuth
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityLoginBinding.inflate(layoutInflater)
@@ -54,6 +57,10 @@ class LoginActivity : AppCompatActivity() {
             val intent=Intent(this,HomePageActivity::class.java)
             startActivity(intent)
         }
+    }
+    fun SplitString(email:String):String{
+        val split=email.split("@")
+        return split[0]
     }
 
 

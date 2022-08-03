@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".SignUpActivity">
+    tools:context=".SignUpActivity"
+    android:background="#3C5B8A">
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign Up !"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="50sp"
         android:textStyle="bold" />
 
@@ -92,7 +93,7 @@
             android:layout_height="wrap_content"
             android:paddingBottom="25dp"
             android:text="Already Registered. Sign In !"
-            android:textColor="@color/black"
+            android:textColor="#EAE3D2"
             android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
