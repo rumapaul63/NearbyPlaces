@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,41 +8,46 @@
     android:background="@color/white">
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageProfilePhoto"
-        android:layout_width="116dp"
-        android:layout_height="104dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/ic_baseline_photo_24"
-        app:civ_border_color="#EFC300"
-        app:civ_border_width="1dp" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="267dp"
-        android:clickable="true"
-        app:srcCompat="@drawable/add_24" />
-    <TextView
-        android:id="@+id/userName"
-        android:layout_width="255dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="6dp"
-        android:text="MOHAMMED SHAHBAZ"
-        android:textSize="18dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"/>
+        android:orientation="vertical"
+        android:gravity="center">
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/progressBarMe"
+            style="@style/SpinKitView.Large.ThreeBounce"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:SpinKit_Color="#DC2875"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageProfilePhoto"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_baseline_account_circle_24"
+            app:civ_border_color="#EFC300"
+            app:civ_border_width="1dp" />
+
+
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="me"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:textStyle="italic"/>
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,6 +59,7 @@
         android:layout_marginRight="10dp"
         android:gravity="bottom"
         android:orientation="vertical">
+
 
         <View
             android:layout_width="match_parent"
@@ -90,13 +96,27 @@
             android:layout_height="0.7dp"
             android:layout_marginTop="22dp"
             android:background="#C5F6F3" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
 
             android:text="Help"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:layout_marginTop="22dp"
+            android:background="#C5F6F3" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+
+            android:text="Terms and conditions"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -135,6 +155,51 @@
             android:layout_marginTop="22dp"
             android:background="#C5F6F3" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+
+                android:text="Follow us on"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/ic_instagram_brands" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/ic_linkedin_brands" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/ic_facebook_brands" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/ic_twitter_brands" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:layout_marginTop="22dp"
+            android:background="#C5F6F3" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -163,6 +228,8 @@
             android:layout_marginTop="22dp"
             android:background="@color/white" />
     </LinearLayout>
+</LinearLayout>
 
 
-</RelativeLayout>
+
+</ScrollView>

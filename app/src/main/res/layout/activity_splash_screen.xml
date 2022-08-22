@@ -29,15 +29,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/quoteApp"
-            android:textColor="#EA274E"
+            android:textColor="#074A33"
             android:textSize="22sp"
             android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="270dp"
-            android:layout_height="155dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
             android:fontFamily="serif"
             android:text="Let’s Get Started..."
 
@@ -59,9 +59,8 @@
             android:gravity="center">
 
             <pl.droidsonroids.gif.GifImageView
-                android:layout_width="283dp"
-                android:layout_height="118dp"
-                android:layout_marginTop="9dp"
+                android:layout_width="match_parent"
+                android:layout_height="218dp"
                 android:src="@drawable/catss"
                 />
 

@@ -18,7 +18,8 @@ class SplashMainScreen : AppCompatActivity() {
             val intent= Intent(this,SplashScreen::class.java)
             startActivity(intent)
             finish()
-        },2000)
+            overridePendingTransition(0,0)
+        },2500)
 
     }
 }

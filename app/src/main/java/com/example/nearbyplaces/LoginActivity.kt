@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         binding.registerTxt.setOnClickListener{
             val intent= Intent(this,SignUpActivity::class.java)
             startActivity(intent)
-            finish()
+            //finish()
         }
 
         binding.loginBtn.setOnClickListener {
@@ -37,7 +37,8 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(this,"Login successful", Toast.LENGTH_SHORT).show()
                             val intent=Intent(this,HomePageActivity::class.java)
                             startActivity(intent)
-                            finish()
+                            overridePendingTransition(0,0)
+                            //finish()
 
                         }else{
                             Toast.makeText(this,"invalid email or password !", Toast.LENGTH_SHORT).show()
@@ -56,6 +57,7 @@ class LoginActivity : AppCompatActivity() {
         if(firebaseAuth.currentUser!=null){
             val intent=Intent(this,HomePageActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(0,0)
         }
     }
     fun SplitString(email:String):String{

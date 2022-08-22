@@ -1,17 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PostActivity"
-    android:orientation="vertical"
-    android:gravity="center">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/userPostRV"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/posts_card"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    android:background="@color/white">
 
-</LinearLayout>
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addPostBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/add_24"
+        app:backgroundTint="#FFA000"
+        android:layout_centerInParent="true"
+        android:contentDescription="add" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/hidePostBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_baseline_cancel_24"
+        app:backgroundTint="#47D576"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:contentDescription="hide" />
+
+
+   <com.google.android.material.card.MaterialCardView
+       android:id="@+id/cardViewPost"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:layout_alignParentTop="true"
+       app:cardElevation="55dp"
+       android:layout_marginTop="7dp"
+       android:layout_marginLeft="3dp"
+       android:layout_marginRight="3dp"
+       android:visibility="gone"
+       app:cardCornerRadius="7dp">
+
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="#12655C"
+           android:orientation="vertical">
+
+           <EditText
+               android:id="@+id/attachText"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="3dp"
+               android:layout_marginRight="3dp"
+               android:layout_marginTop="60dp"
+               android:layout_marginBottom="4dp"
+               android:hint="write something..."
+               android:textColor="#FFFFFF"
+               android:textColorHint="#C8BC4F" />
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="2dp">
+
+               <ImageView
+                   android:id="@+id/attachPhoto"
+                   android:layout_width="39dp"
+                   android:layout_height="39dp"
+                   android:layout_marginStart="3dp"
+                   android:background="@drawable/ic_baseline_attachment_24" />
+
+               <TextView
+                   android:id="@+id/photoStatusText"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="photo selected"
+                   android:layout_marginLeft="10dp"
+                   android:textColor="#00FF1A"
+                   android:textSize="15dp"
+                   android:textStyle="italic|bold"
+                   android:visibility="gone" />
+
+               <TextView
+                   android:id="@+id/postBtn"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginRight="8dp"
+                   android:layout_weight="1"
+
+                   android:text="POST"
+                   android:textAlignment="textEnd"
+                   android:textColor="#77A506"
+                   android:textSize="15dp"
+                   android:textStyle="bold" />
+
+           </LinearLayout>
+
+
+       </LinearLayout>
+   </com.google.android.material.card.MaterialCardView>
+
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progressBar"
+        style="@style/SpinKitView.Large.ThreeBounce"
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        app:SpinKit_Color="#229DC3"/>
+
+
+    <ListView
+        android:id="@+id/postListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/posts_card" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/uploadStatusProgressBar"
+        style="@style/SpinKitView.Large.FadingCircle"
+        android:layout_width="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:SpinKit_Color="#403525"/>
+
+
+
+
+
+</RelativeLayout>

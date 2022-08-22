@@ -1,77 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1pt"
-        android:background="@color/quantum_yellow"/>
 
-    <LinearLayout
-        android:id="@+id/ls1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="4dp">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imageProfilePhoto"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/me"
-            app:civ_border_color="#EFC300"
-            app:civ_border_width="1dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:text="mohammed shahbaz"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="3dp"
         android:orientation="vertical">
 
-        <ImageView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="252dp"
-            android:background="@drawable/catss" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Follow"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_marginStart="15dp"
-                android:textSize="15sp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Like"
-                android:textColor="@color/black"
-                android:textAlignment="textEnd"
-                android:textStyle="bold"
-                android:layout_marginStart="45dp"
-                android:textSize="15sp"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:cardBackgroundColor="#E6D1D1"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="500dp">
 
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/ls1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#23BABA"
+                    android:padding="4dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imageProfilePhoto"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/me"
+                        app:civ_border_color="#EFC300"
+                        app:civ_border_width="1dp"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2pt"
+                        android:layout_weight="1"
+                        android:text="Follow+"
+                        android:textAlignment="textEnd"
+                        android:textAllCaps="true"
+                        android:textColor="#8C8C54"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="1dp">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5pt"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@color/quantum_grey"/>
+                    <TextView
+                        android:id="@+id/description"
+                        android:padding="7dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="no description"/>
+                        <ImageView
+                            android:id="@+id/postPic"
+                            android:layout_width="match_parent"
+                            android:layout_height="320dp"
+                            android:background="@drawable/loooo" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_height="0.5pt"
+                            android:layout_marginBottom="6dp"
+                            android:background="@color/quantum_grey"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2pt"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/likes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:text="0"
+                            android:textColor="@color/purple_200"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/likeIcon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="3dp"
+                            android:background="@drawable/ic_heart_regular" />
+
+                        <TextView
+                            android:id="@+id/dislikes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:text="0"
+                            android:textColor="#ED4949"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/dislikeIcon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="1pt"
+                            android:background="@drawable/ic_thumbs_down_regular" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="2"
+                            android:visibility="gone"
+                            android:text="journey experience"
+                            android:textAlignment="textEnd"
+                            android:textColor="#A88D59"
+                            android:textSize="12dp" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
 
 
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1pt"
-        android:background="@color/quantum_yellow"/>
 
 
 
-</LinearLayout>
+
+</RelativeLayout>
