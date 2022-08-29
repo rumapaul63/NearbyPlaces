@@ -79,43 +79,6 @@ class PostActivity : AppCompatActivity() {
 
 
 
-        if(likeIcon!=null){
-            likeIcon.setOnClickListener {
-                Toast.makeText(this,"you liked this review",Toast.LENGTH_SHORT).show()
-                myRef.child("likes_node")
-                    .setValue(firebaseAuth.currentUser!!.uid)
-                    .addOnSuccessListener {
-
-                        //TODO: integrate animation in like button
-                    }
-                // likeIcon.isEnabled=false
-            }
-        }
-        if(dislikeIcon!=null){
-            dislikeIcon.setOnClickListener {
-                Toast.makeText(this,"you disliked this review",Toast.LENGTH_SHORT).show()
-                myRef.child("dislikes_node")
-                    .setValue(firebaseAuth.currentUser!!.uid)
-                    .addOnSuccessListener {
-                        //TODO: integrate animation in dislike button
-                    }
-
-                // dislikeIcon.isEnabled=false
-
-
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
 
         binding.attachPhoto.setOnClickListener {
             val intent= Intent()
@@ -207,6 +170,43 @@ class PostActivity : AppCompatActivity() {
             myView.username.setText(mypost.username)
             Picasso.get().load(mypost.postImageURL).into(myView.postPic);
             myView.description.setText(mypost.postDes)
+
+           //TODO: here i am adding the features of like and dislike options
+
+                myView.likeIcon.setOnClickListener {
+                    Toast.makeText(context,"you liked this review",Toast.LENGTH_SHORT).show()
+                    myRef
+                        .child("likes_node")
+                        .push()
+                        .setValue(firebaseAuth.currentUser!!.uid)
+                        .addOnSuccessListener {
+                            //TODO: integrate animation in like button
+
+                        }
+                    myView.likeIcon.isEnabled=false
+                }
+
+
+                myView.dislikeIcon.setOnClickListener {
+                    Toast.makeText(context,"you disliked this review",Toast.LENGTH_SHORT).show()
+                    myRef
+                        .child("dislikes_node")
+                        .push()
+                        .setValue(firebaseAuth.currentUser!!.uid)
+                        .addOnSuccessListener {
+                            //TODO: integrate animation in dislike button
+                        }
+
+                    myView.dislikeIcon.isEnabled=false
+
+
+                }
+
+
+
+
+
+
 
 
 
@@ -342,13 +342,16 @@ class PostActivity : AppCompatActivity() {
 
 
     fun LoadLikes(){
-        myRef.child("likes_node")
+        myRef.child("likes_node").push()
             .addValueEventListener(object :ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
 
                     try {
                         val td=snapshot.value as HashMap<String, Any>
                         for(key in td.keys){
+
+                            //TODO: error in loading likes and dislikes.
+
                             // val like=td[key] as HashMap<String, Any>
                             likes.text=td.size.toString()
                         }
@@ -360,13 +363,16 @@ class PostActivity : AppCompatActivity() {
             })
     }
     fun LoadDislikes(){
-        myRef.child("dislikes_node")
+        myRef.child("dislikes_node").push()
             .addValueEventListener(object :ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
 
                     try {
                         val td=snapshot.value as HashMap<String, Any>
                         for(key in td.keys){
+
+                            //TODO: error in loading likes and dislikes.
+
                             // val like=td[key] as HashMap<String, Any>
                             dislikes.text=td.size.toString()
                         }

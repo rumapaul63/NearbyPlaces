@@ -64,8 +64,7 @@ class SignUpActivity : AppCompatActivity() {
             val phone=binding.etPhoneNumber.text.toString()
             binding.progressSignUp.visibility=View.VISIBLE
 
-
-            if(phone.isNotEmpty() && name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty() &&  selectedImg !=null){
+            if(phone.isNotEmpty() && name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty() ){
 
                 if(password.equals(confirmPassword)){
                        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
@@ -84,8 +83,6 @@ class SignUpActivity : AppCompatActivity() {
                                editor.commit()
 
                                startActivity(intent)
-
-                               overridePendingTransition(0,0)
 
                            }else{
                                binding.progressSignUp.visibility=View.GONE
