@@ -64,14 +64,16 @@ class SignUpActivity : AppCompatActivity() {
             val phone=binding.etPhoneNumber.text.toString()
             binding.progressSignUp.visibility=View.VISIBLE
 
+
             if(phone.isNotEmpty() && name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty() ){
+
 
                 if(password.equals(confirmPassword)){
                        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                            if(it.isSuccessful){
                                binding.progressSignUp.visibility=View.GONE
 
-                               saveDataToFirebase()
+                               uploadInfo()
                                Toast.makeText(this, "SignUp successful", Toast.LENGTH_SHORT).show()
                                val intent = Intent(this, LoginActivity::class.java)
 
@@ -119,14 +121,14 @@ class SignUpActivity : AppCompatActivity() {
         reference.putFile(selectedImg!!).addOnCompleteListener{
             if(it.isSuccessful){
                 reference.downloadUrl.addOnSuccessListener { task->
-                    uploadInfo(task.toString())
+                    uploadInfo()
                 }
             }
         }
     }
 
-    private fun uploadInfo(imgUrl: String) {
-        val user= UserModel(firebaseAuth.uid.toString(),binding.etName.text.toString(), imgUrl,binding.etPhoneNumber.text.toString())
+    private fun uploadInfo() {
+        val user= UserModel(firebaseAuth.uid.toString(),binding.etName.text.toString(), binding.etPhoneNumber.text.toString())
         database.reference.child("users")
             .child(firebaseAuth.uid.toString())
             .setValue(user)

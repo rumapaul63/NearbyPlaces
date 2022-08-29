@@ -213,31 +213,31 @@ class PostActivity : AppCompatActivity() {
 
             //TODO: changing the name and image field to poster's data.
 
-            myRef.child("users")
-                .child(firebaseAuth.uid.toString())
-                .addValueEventListener(object :ValueEventListener{
-                    override fun onDataChange(snapshot: DataSnapshot) {
-
-                        try {
-                            var td=snapshot.value as HashMap<String,Any>
-                            for(key in td.keys){
-                                var userInfo=td[key] as String
-                                if(key.equals("imageUrl")){
-                                    Picasso.get().load(userInfo).into(myView.imageProfilePhoto)
-                                }else if(key.equals("name")){
-                                  //  myView.username.setText(userInfo)
-                                }
-
-                            }
-
-
-                        }catch (ex:Exception){}
-                    }
-
-                    override fun onCancelled(error: DatabaseError) {
-
-                    }
-                })
+//            myRef.child("users")
+//                .child(firebaseAuth.uid.toString())
+//                .addValueEventListener(object :ValueEventListener{
+//                    override fun onDataChange(snapshot: DataSnapshot) {
+//
+//                        try {
+//                            var td=snapshot.value as HashMap<String,Any>
+//                            for(key in td.keys){
+//                                var userInfo=td[key] as String
+//                                if(key.equals("imageUrl")){
+//                                    Picasso.get().load(userInfo).into(myView.imageProfilePhoto)
+//                                }else if(key.equals("name")){
+//                                  //  myView.username.setText(userInfo)
+//                                }
+//
+//                            }
+//
+//
+//                        }catch (ex:Exception){}
+//                    }
+//
+//                    override fun onCancelled(error: DatabaseError) {
+//
+//                    }
+//                })
 
 
             return myView
