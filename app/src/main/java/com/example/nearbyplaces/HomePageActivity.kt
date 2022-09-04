@@ -3,13 +3,12 @@ package com.example.nearbyplaces
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.nearbyplaces.databinding.ActivityHomePageBinding
-import kotlinx.android.synthetic.main.activity_maps.*
+import com.example.nearbyplaces.ui.NewsActivity
 
 class HomePageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomePageBinding
@@ -52,7 +51,7 @@ class HomePageActivity : AppCompatActivity() {
             binding.newsBtn.startAnimation(animation)
             Toast.makeText(this,"loading news",Toast.LENGTH_SHORT).show()
             try {
-                val intent= Intent(this,NewsActivity::class.java)
+                val intent= Intent(this, NewsActivity::class.java)
                 startActivity(intent)
                 overridePendingTransition(0,0)
             }catch (ex:Exception){}
